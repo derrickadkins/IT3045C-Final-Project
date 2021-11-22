@@ -28,7 +28,7 @@ namespace IT3045C_Final_Project
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<Context>(opt => opt.UseInMemoryDatabase("IT3045C_Final_Project_API"));
+            services.AddDbContext<Context>(opt => opt.UseSqlServer(Configuration.GetConnectionString("IT3045C_Final_Project_API_Connection_String")));
             services.AddSwaggerDocument();
         }
 

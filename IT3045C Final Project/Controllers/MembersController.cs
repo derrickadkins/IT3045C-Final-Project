@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using IT3045C_Final_Project.Models;
@@ -29,16 +27,16 @@ namespace IT3045C_Final_Project.Controllers
 
         // GET: api/Members/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Member>> GetMember(int id)
+        public async Task<ActionResult<IEnumerable<Member>>> GetMember(int id)
         {
             var member = await _context.Members.FindAsync(id);
 
             if (member == null)
             {
-                return NotFound();
+                return await _context.Members.Take(5).ToListAsync();
             }
 
-            return member;
+            return new Member[] { member };
         }
 
         // PUT: api/Members/5
