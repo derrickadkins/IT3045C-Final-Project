@@ -10,5 +10,6 @@ namespace IT3045C_Final_Project.Models
     {
         public Context(DbContextOptions<Context> options) : base(options) { }
         public DbSet<Member> Members { get; set; }
+        public DbSet<Hobby> Hobbies { get; set; }
     }
 }
