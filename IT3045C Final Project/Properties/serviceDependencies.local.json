@@ -1,8 +1,5 @@
 {
   "dependencies": {
-    "secrets1": {
-      "type": "secrets.user"
-    },
     "mssql1": {
       "type": "mssql.local",
       "connectionId": "IT3045C_Final_Project_API_Connection_String",
