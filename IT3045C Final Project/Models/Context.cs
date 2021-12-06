@@ -12,6 +12,7 @@ namespace IT3045C_Final_Project.Models
         public DbSet<Member> Members { get; set; }
         public DbSet<Hobby> Hobbies { get; set; }
         public DbSet<Food> Foods { get; set; }
-        public DbSet<Living> livings { get; set; }
+        public DbSet<Singer> Singers { get; set; }
+        public object Singer { get; internal set; }
     }
 }
