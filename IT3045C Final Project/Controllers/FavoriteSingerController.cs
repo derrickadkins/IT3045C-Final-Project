@@ -18,11 +18,13 @@ namespace IT3045C_Final_Project.Controllers
         {
             _context = context;
         }
+        // GET: api/Singer
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Singer>>> GetSinge()
         {
             return await _context.Singers.ToListAsync();
         }
+        // GET: api/Singer/5
         [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<Singer>>> GetSinger(int id)
         {
@@ -34,6 +36,7 @@ namespace IT3045C_Final_Project.Controllers
             }
             return new Singer[] { favoritesinger };
         }
+        // PUT: api/Singers/5
         [HttpPut("{id}")]
         private bool SingerExists(int id)
         {
@@ -66,6 +69,7 @@ namespace IT3045C_Final_Project.Controllers
             return NoContent();
 
         }
+        // POST: api/Singers
         [HttpPost]
         public async Task<IActionResult> PostSinger(Singer singer)
         {
@@ -74,6 +78,7 @@ namespace IT3045C_Final_Project.Controllers
 
             return CreatedAtAction(nameof(GetSinger), new { id = singer.id }, singer);
         }
+        // DELETE: api/Singers/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Singer>> DeleteSinger(int id)
         {

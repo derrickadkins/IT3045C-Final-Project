@@ -27,7 +27,7 @@ namespace IT3045C_Final_Project.Controllers
         {
             return await _context.Foods.ToListAsync();
         }
-        // get: api/hobbies
+        // get: api/Food/5
         [HttpGet("{id}")]
 
         public async Task<ActionResult<IEnumerable<Food>>> GetFood(int id)
